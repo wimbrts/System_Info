@@ -3,9 +3,9 @@
 
  AutoIt Version: 3.3.14.5 + file SciTEUser.properties in your UserProfile e.g. C:\Users\User-10
 
- Author:        WIMB  -  Oct 24, 2019
+ Author:        WIMB  -  June 08, 2020
 
- Program:       System_Info_x64.exe - Version 4.2
+ Program:       System_Info_x64.exe - Version 4.3
 
  Script Function:
 
@@ -224,7 +224,7 @@ If $UUID = "" Then
 	; MsgBox(0, "UUID", "UUID = " & $UUID)
 EndIf
 
-$GUI_Start = GUICreate("System Info - x64 Version 4.2", 390, 410, -1, -1, BitXOR($GUI_SS_DEFAULT_GUI, $WS_MINIMIZEBOX))
+$GUI_Start = GUICreate("System Info - x64 Version 4.3", 390, 410, -1, -1, BitXOR($GUI_SS_DEFAULT_GUI, $WS_MINIMIZEBOX))
 $button19 = GUICtrlCreateButton(" Sys Info ", 30, 25, 70)
 GUICtrlSetFont(-1, 10, "", "", "Tahoma")
 $button1 = GUICtrlCreateButton(" MS Info ", 110, 25, 70)
@@ -395,7 +395,7 @@ While 1
 				EndIf
 				If @OSArch = "X86" Then
 					FileWriteLine(@ScriptDir & "\" & $ComputerName & "_HWIDs_Info.txt", _
-					@CRLF & "  " & $ComputerName & "_HWIDs_Info.txt - System Info x86 - Version 4.2 - " & @YEAR & "-" & @MON & "-" & @MDAY & "_" & @HOUR & ":" & @MIN & ":" & @SEC & @CRLF _
+					@CRLF & "  " & $ComputerName & "_HWIDs_Info.txt - System Info x86 - Version 4.3 - " & @YEAR & "-" & @MON & "-" & @MDAY & "_" & @HOUR & ":" & @MIN & ":" & @SEC & @CRLF _
 					& @CRLF & "=========== " & @CRLF & "PCI Devices " & @CRLF & "=========== " & @CRLF)
 					RunWait(@ComSpec & " /c makebt\devcon\x86\devcon find pci* >> " & $ComputerName & "_HWIDs_Info.txt", @ScriptDir, @SW_HIDE)
 					FileWriteLine(@ScriptDir & "\" & $ComputerName & "_HWIDs_Info.txt", _
@@ -415,7 +415,7 @@ While 1
 					RunWait(@ComSpec & " /c makebt\devcon\x86\devcon hwids *CC_01* *Raid* >> " & $ComputerName & "_HWIDs_Info.txt", @ScriptDir, @SW_HIDE)
 				Else
 					FileWriteLine(@ScriptDir & "\" & $ComputerName & "_HWIDs_Info.txt", _
-					@CRLF & "  " & $ComputerName & "_HWIDs_Info.txt - System Info x64 - Version 4.2 - " & @YEAR & "-" & @MON & "-" & @MDAY & "_" & @HOUR & ":" & @MIN & ":" & @SEC & @CRLF _
+					@CRLF & "  " & $ComputerName & "_HWIDs_Info.txt - System Info x64 - Version 4.3 - " & @YEAR & "-" & @MON & "-" & @MDAY & "_" & @HOUR & ":" & @MIN & ":" & @SEC & @CRLF _
 					& @CRLF & "=========== " & @CRLF & "PCI Devices " & @CRLF & "=========== " & @CRLF)
 					RunWait(@ComSpec & " /c makebt\devcon\x64\devcon find pci* >> " & $ComputerName & "_HWIDs_Info.txt", @ScriptDir, @SW_HIDE)
 					FileWriteLine(@ScriptDir & "\" & $ComputerName & "_HWIDs_Info.txt", _
@@ -499,7 +499,7 @@ While 1
 				EndIf
 				If $PE_flag = 1 Then
 					FileWriteLine(@ScriptDir & "\" & $ComputerName & "_System_Info.txt", _
-					@CRLF & "  " & $ComputerName & "_System_Info.txt - System Info x64 - Version 4.2 - " & @YEAR & "-" & @MON & "-" & @MDAY & "_" & @HOUR & ":" & @MIN & ":" & @SEC & @CRLF _
+					@CRLF & "  " & $ComputerName & "_System_Info.txt - System Info x64 - Version 4.3 - " & @YEAR & "-" & @MON & "-" & @MDAY & "_" & @HOUR & ":" & @MIN & ":" & @SEC & @CRLF _
 					& @CRLF & "  Firmware = " & $Firmware & @CRLF _
 					& @CRLF & "  Partition Style System Drive " & $OS_DriveLetter & ":  = " & $PartStyle & @CRLF _
 					& @CRLF & "  Partition Style   App  Drive " & StringLeft(@ScriptDir, 2) & "  = " & $PartStyle_ScriptDrive & @CRLF _
@@ -520,7 +520,7 @@ While 1
 					& @CRLF & "  Windows Def DPid4 = " & _Decode_ProductKey("Windows_Def_DPid4"))
 				Else
 					FileWriteLine(@ScriptDir & "\" & $ComputerName & "_System_Info.txt", _
-					@CRLF & "  " & $ComputerName & "_System_Info.txt - System Info x64 - Version 4.2 - " & @YEAR & "-" & @MON & "-" & @MDAY & "_" & @HOUR & ":" & @MIN & ":" & @SEC & @CRLF _
+					@CRLF & "  " & $ComputerName & "_System_Info.txt - System Info x64 - Version 4.3 - " & @YEAR & "-" & @MON & "-" & @MDAY & "_" & @HOUR & ":" & @MIN & ":" & @SEC & @CRLF _
 					& @CRLF & "  Firmware = " & $Firmware & @CRLF _
 					& @CRLF & "  Partition Style System Drive " & $OS_DriveLetter & ":  = " & $PartStyle & @CRLF _
 					& @CRLF & "  Partition Style   App  Drive " & StringLeft(@ScriptDir, 2) & "  = " & $PartStyle_ScriptDrive & @CRLF _
@@ -616,7 +616,7 @@ Func _WinAPI_GetFirmwareEnvironmentVariable()
         Case 998
             Return "UEFI"
         Case Else
-            Return "UNKNOWN"
+            Return "UEFI"
     EndSwitch
 EndFunc   ;==>_WinAPI_GetFirmwareEnvironmentVariable
 ;===================================================================================================
