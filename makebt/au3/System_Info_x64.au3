@@ -3,7 +3,7 @@
 
  AutoIt Version: 3.3.14.5 + file SciTEUser.properties in your UserProfile e.g. C:\Users\User-10
 
- Author:        WIMB  -  June 08, 2020
+ Author:        WIMB  -  July 21, 2020
 
  Program:       System_Info_x64.exe - Version 4.3
 
@@ -330,10 +330,10 @@ While 1
 						If $len_TS > 3 Then
 							$pos_TS = StringInStr($TargetSelect, "\", 0, -1)
 							$path_folder = StringRight($TargetSelect, $len_TS - $pos_TS)
-							RunWait(@ComSpec & " /u /c dir /b /s /ad-l /on > " & '"' & @ScriptDir & "\Folder_List_" & $drv & "_" & $path_folder & ".txt" & '"', $TargetSelect, @SW_HIDE)
+							RunWait(@ComSpec & " /c dir /b /s /ad-l /on > " & '"' & @ScriptDir & "\Folder_List_" & $drv & "_" & $path_folder & ".txt" & '"', $TargetSelect, @SW_HIDE)
 							ShellExecute("notepad.exe", "Folder_List_" & $drv & "_" & $path_folder & ".txt", @ScriptDir)
 						Else
-							RunWait(@ComSpec & " /u /c dir /b /s /ad-l /on > " & '"' & @ScriptDir & "\Folder_List_" & $drv & ".txt" & '"', $TargetSelect, @SW_HIDE)
+							RunWait(@ComSpec & " /c dir /b /s /ad-l /on > " & '"' & @ScriptDir & "\Folder_List_" & $drv & ".txt" & '"', $TargetSelect, @SW_HIDE)
 							ShellExecute("notepad.exe", "Folder_List_" & $drv & ".txt", @ScriptDir)
 						EndIf
 					EndIf
@@ -470,10 +470,10 @@ While 1
 						If $len_TS > 3 Then
 							$pos_TS = StringInStr($TargetSelect, "\", 0, -1)
 							$path_folder = StringRight($TargetSelect, $len_TS - $pos_TS)
-							RunWait(@ComSpec & " /u /c dir /b /s /a-d-l /on > " & '"' & @ScriptDir & "\File_List_" & $drv & "_" & $path_folder & ".txt" & '"', $TargetSelect, @SW_HIDE)
+							RunWait(@ComSpec & " /c dir /b /s /a-d-l /on > " & '"' & @ScriptDir & "\File_List_" & $drv & "_" & $path_folder & ".txt" & '"', $TargetSelect, @SW_HIDE)
 							ShellExecute("notepad.exe", "File_List_" & $drv & "_" & $path_folder & ".txt", @ScriptDir)
 						Else
-							RunWait(@ComSpec & " /u /c dir /b /s /a-d-l /on > " & '"' & @ScriptDir & "\File_List_" & $drv & ".txt" & '"', $TargetSelect, @SW_HIDE)
+							RunWait(@ComSpec & " /c dir /b /s /a-d-l /on > " & '"' & @ScriptDir & "\File_List_" & $drv & ".txt" & '"', $TargetSelect, @SW_HIDE)
 							ShellExecute("notepad.exe", "File_List_" & $drv & ".txt", @ScriptDir)
 						EndIf
 					EndIf
